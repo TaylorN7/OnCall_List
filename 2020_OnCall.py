@@ -58,9 +58,6 @@ for month in months:
         if tech_count == 8:
            tech_count = 0
 
-        #print("Day Count: " + str(day_count))
-        #print("Tech Count: " + str(tech_count))
-
         if i in day_list:
             continue
 

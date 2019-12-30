@@ -54,15 +54,21 @@ day_list = []
 
 for month in months:
     for i in c.itermonthdates(2020,month_val):
+        # print(i)
+
+        if day_count == 7:
+            day_count = 0
+            tech_count += 1
+            r += 1
 
         if tech_count == 8:
            tech_count = 0
-
+            
         if i in day_list:
             continue
 
         else:
-            if day_count == 0 or day_count == 1 or day_count == 2 or day_count == 3:
+            if day_count == 0:
                 print(i, days[day_count], cns_techs[tech_count], end="\n")
                 today = str(i) + " " + str(days[day_count])
 
@@ -72,8 +78,21 @@ for month in months:
 
                 tech_count += 1
                 day_count += 1
+                day_list.append(i)
 
-            elif day_count == 4 or day_count == 5 or day_count == 6:
+            elif day_count == 1 or day_count == 2 or day_count == 3:
+                print(i, days[day_count], cns_techs[tech_count], end="\n")
+                today = str(i) + " " + str(days[day_count])
+
+                ws.cell(row = r, column = 1).value = today
+                ws.cell(row = r, column = 2).value = cns_techs[tech_count]
+                r += 1
+
+                tech_count += 1
+                day_count += 1
+                day_list.append(i)
+
+            elif day_count == 4 or day_count == 5:
                 print(i, days[day_count], cns_techs[tech_count], end="\n")
                 today = str(i) + " " + str(days[day_count])
 
@@ -81,6 +100,7 @@ for month in months:
                 ws.cell(row = r, column = 2).value = cns_techs[tech_count]
                 r += 1
                 day_count += 1
+                day_list.append(i)
 
             elif day_count == 6:
                 print(i, days[day_count], cns_techs[tech_count], end="\n")
@@ -89,17 +109,10 @@ for month in months:
                 ws.cell(row = r, column = 1).value = today
                 ws.cell(row = r, column = 2).value = cns_techs[tech_count]
                 r += 1
-
-                tech_count += 1
                 day_count += 1
+                day_list.append(i)
 
-            elif day_count == 7:
-                day_count = 0
-                tech_count += 1
-                r += 1
-
-            day_list.append(i)
-             
+    
     month_val += 1
 
 

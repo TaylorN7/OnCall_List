@@ -10,6 +10,7 @@ ws['A1'] = 'Date'
 ws['B1'] = 'Engineer'
 
 cns_techs = [
+    "Jeff Bertuch",
     "Nick Langley",
     "David Hecker",
     "James Mixon", 
@@ -17,7 +18,7 @@ cns_techs = [
     "Tim Rhodes",
     "Taylor Neves",
     "Chad Renfro",
-    "Brian Mayorga",
+    "Brian Mayorga", 
 ]
 
 months = [
@@ -61,7 +62,7 @@ for month in months:
             tech_count += 1
             r += 1
 
-        if tech_count == 8:
+        if tech_count == 9:
            tech_count = 0
             
         if i in day_list:
@@ -116,4 +117,4 @@ for month in months:
     month_val += 1
 
 
-wb.save('2020_OnCall_W_NL.xlsx')
+wb.save('2020_OnCall_W_JB.xlsx')

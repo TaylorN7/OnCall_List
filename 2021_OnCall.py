@@ -10,15 +10,15 @@ ws['A1'] = 'Date'
 ws['B1'] = 'Engineer'
 
 cns_techs = [
-    "Jeff Bertuch",
     "Nick Langley",
-    "David Hecker",
-    "James Mixon", 
+    "Alex Greene",
+    "James Mixon",
+    "Jeff Bertuch",
     "Corbin Casper",
     "Tim Rhodes",
     "Taylor Neves",
-    "Chad Renfro",
-    "Brian Mayorga", 
+    "Nick Jeffrey",
+    "Matthew Lane",   
 ]
 
 months = [
@@ -54,7 +54,7 @@ r = 2
 day_list = []
 
 for month in months:
-    for i in c.itermonthdates(2020,month_val):
+    for i in c.itermonthdates(2021,month_val):
         # print(i)
 
         if day_count == 7:
@@ -117,4 +117,4 @@ for month in months:
     month_val += 1
 
 
-wb.save('2020_OnCall_W_JB.xlsx')
+wb.save('2021_OnCall.xlsx')
